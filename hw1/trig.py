@@ -4,6 +4,7 @@ import time
 filename = 'results.csv'
 
 def findTriangle(M):
+    n = M.shape[1]
     for i in range(0, n):
         for j in range(i+1, n-1):
             if M[i][j] == 1:
