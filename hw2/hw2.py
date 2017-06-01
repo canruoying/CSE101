@@ -60,8 +60,7 @@ def fillNormal(M):
 f = open(filename, 'w')
 f.write("Normal\n")
 
-for i in range(2, 12):
-    n = np.power(2, i)
+for n in range(2, 65):
     M = fillNormal(generateMatrix(n))
     start = time.time()
     runs = 50
@@ -70,7 +69,7 @@ for i in range(2, 12):
         result = result + len(findIndependentSet(M))
     result = result / runs
     elapsed = time.time() - start
-    line = [str(n), ',', str(result), ',', str(elapsed)]
+    line = ['(', str(n), ',', str(result), ')']
     f.write(''.join(line))
     f.write('\n')
-    print(i,n,result)
+    print(n,result)
